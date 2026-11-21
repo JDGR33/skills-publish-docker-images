@@ -24,12 +24,12 @@ jobs:
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Build and Push Docker images
+      - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          plataforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/jdgr33/skills-publish-docker-images/stackoverflown:main
             ghcr.io/jdgr33/skills-publish-docker-images/stackoverflown:${{ github.sha }}
